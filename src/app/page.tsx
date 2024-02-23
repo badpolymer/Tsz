@@ -1,7 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import imageURL from "./imageURL";
 
 export default function Home() {
+
+  const isProd = process.env.NODE_ENV === 'production'
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -17,7 +21,7 @@ export default function Home() {
           >
             By{" "}
             <Image
-              src="/Tsz/vercel.svg"
+              src={imageURL(`/vercel.svg`)}
               alt="Vercel Logo"
               className={styles.vercelLogo}
               width={100}
@@ -31,7 +35,7 @@ export default function Home() {
       <div className={styles.center}>
         <Image
           className={styles.logo}
-          src="/Tsz/next.svg"
+          src={imageURL("/next.svg")}
           alt="Next.js Logo"
           width={180}
           height={37}
