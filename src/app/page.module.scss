@@ -1,6 +1,8 @@
 @import "variables";
 
 $search-bar-border-radius: 0.2rem;
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -9,18 +11,20 @@ $search-bar-border-radius: 0.2rem;
   gap: 1rem;
   padding: 6rem;
   min-height: 100vh;
+  transition: all 1s;
+
 }
 
 .main {
   .building_emoji{
     font-size: 10rem;
+    transition: all 1s;
   }
 
   div{
     font-size: 2rem;
     color: var(--c0);
-
-    
+    transition: all 1s;
   }
 }
 
@@ -125,6 +129,33 @@ $search-bar-border-radius: 0.2rem;
 
 
 }
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem;
+
+    .building_emoji{
+      font-size: 5rem;
+    }
+  
+    div{
+      font-size: 1.25rem;
+      color: var(--c0);
+    }
+  }
+  .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+}
+
+
+
+
 
 
 
