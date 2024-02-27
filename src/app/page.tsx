@@ -8,6 +8,7 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
+            <div className={styles.building_emoji}>🏗️</div>
             <div>Everything is under construction</div>
             <div>密鑼緊鼓施工中</div>
             <Form></Form>

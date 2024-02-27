@@ -12,9 +12,15 @@ $search-bar-border-radius: 0.2rem;
 }
 
 .main {
+  .building_emoji{
+    font-size: 10rem;
+  }
+
   div{
     font-size: 2rem;
     color: var(--c0);
+
+    
   }
 }
 
