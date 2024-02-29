@@ -1,9 +1,13 @@
+import { Suspense } from "react";
 import LanguageSelector from "./LanguageSelector";
 
 export default function Header() {
     return (
         <header>
-            <LanguageSelector></LanguageSelector>
+            <Suspense>
+                <LanguageSelector></LanguageSelector>
+            </Suspense>
+
         </header>
     )
 }

@@ -2,6 +2,7 @@
 import styles from "./page.module.scss";
 import { useLanguagePack } from "@/hooks/useLanguagePack";
 import HomeSearchForm from "@/components/HomeSearchForm";
+import { Suspense } from "react";
 
 export default function Home() {
     // Retrieve language packages
@@ -13,7 +14,10 @@ export default function Home() {
         <main className={styles.main}>
             <div className={styles.building_emoji}>🏗️</div>
             <div>{selectedLangPack.translation.construction}</div>
-            <HomeSearchForm></HomeSearchForm>
+            <Suspense>
+                <HomeSearchForm></HomeSearchForm>
+            </Suspense>
+
         </main>
     );
 }
