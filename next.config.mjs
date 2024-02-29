@@ -6,7 +6,7 @@ const nextConfig = {
     assetPrefix: isProd ? 'https://badpolymer.github.io/Tsz' : undefined,
     basePath: isProd ? '/Tsz' : undefined,
     experimental: {
-        missingSuspenseWithCSRBailout: false
+        //missingSuspenseWithCSRBailout: false
         //https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
     }
 };

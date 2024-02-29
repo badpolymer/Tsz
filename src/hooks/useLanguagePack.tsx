@@ -1,7 +1,12 @@
 import { LangPack } from "@/types/LangPack";
 import lang from '@/json/lang.json';
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
-
+/**
+ * Get the associated language package
+ * NOTE: Use <Suspense> to warp the component where
+ * this hook is used.
+ * @returns 
+ */
 export function useLanguagePack() {
     const langPacks = lang as [LangPack];
     // Check the language code in the url
