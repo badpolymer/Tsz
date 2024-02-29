@@ -6,7 +6,7 @@ import { ReadonlyURLSearchParams, RedirectType, redirect, usePathname, useSearch
 import Link from "next/link";
 
 
-export default function LanguageSelector({ setLang }: { setLang: (l: string) => void }) {
+export default function LanguageSelector() {
     const pathname = usePathname();
     // Retrieve language packages and all available language codes
     const langPacks = lang as [LangPack];

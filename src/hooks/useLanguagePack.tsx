@@ -2,7 +2,7 @@ import { LangPack } from "@/types/LangPack";
 import lang from '@/json/lang.json';
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 
-export function getLanguagePack() {
+export function useLanguagePack() {
     const langPacks = lang as [LangPack];
     // Check the language code in the url
     const searchParams = useSearchParams() || new ReadonlyURLSearchParams(new URLSearchParams());

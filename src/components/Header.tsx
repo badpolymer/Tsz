@@ -1,9 +1,9 @@
 import LanguageSelector from "./LanguageSelector";
 
-export default function Header({setLanguage}:{setLanguage:(l:string)=>void}) {
+export default function Header() {
     return (
         <header>
-            <LanguageSelector setLang={setLanguage}></LanguageSelector>
+            <LanguageSelector></LanguageSelector>
         </header>
     )
 }

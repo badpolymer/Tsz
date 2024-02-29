@@ -2,10 +2,10 @@ import printOut from "@/functions/printOut";
 import { FormEvent, useEffect, useState, KeyboardEvent } from "react";
 import styles from "@/app/page.module.scss";
 import index from '@/json/index.json';
-import { getLanguagePack } from "@/functions/getLanguagePack";
+import { useLanguagePack } from "@/hooks/useLanguagePack";
 
 export default function HomeSearchForm() {
-    const locale = getLanguagePack().translation;
+    const locale = useLanguagePack().translation;
     printOut(`Generate Form`);
     const previewNumber = 5;
     let previewLoaded = false;
@@ -142,7 +142,7 @@ export default function HomeSearchForm() {
 
         }
 
-    }, [selectedIndex, isSelecting]);
+    }, [selectedIndex, isSelecting,resultList]);
 
 
 

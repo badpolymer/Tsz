@@ -1,11 +1,11 @@
 "use client";
 import styles from "./page.module.scss";
-import { getLanguagePack } from "@/functions/getLanguagePack";
+import { useLanguagePack } from "@/hooks/useLanguagePack";
 import HomeSearchForm from "@/components/HomeSearchForm";
 
 export default function Home() {
     // Retrieve language packages
-    const selectedLangPack = getLanguagePack();
+    const selectedLangPack = useLanguagePack();
 
 
 
