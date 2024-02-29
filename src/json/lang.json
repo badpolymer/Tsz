@@ -1,11 +1,38 @@
-{
-    "en-us":{
-        "search_go":"GO"
+[
+    {
+        "code": "ct",
+        "translation": {
+            "name": "粵語/廣東話",
+            "search_go": "搵",
+            "construction": "密鑼緊鼓施工中",
+            "temp_placeholder": "重未用得住"
+        }
+    },
+    {
+        "code": "en-uk",
+        "translation": {
+            "name": "English(UK)",
+            "search_go": "GO",
+            "construction": "Everything is under construction",
+            "temp_placeholder": "Under Test"
+        }
+    },
+    {
+        "code": "en-us",
+        "translation": {
+            "name": "English(US)",
+            "search_go": "GO",
+            "construction": "Everything is under construction",
+            "temp_placeholder": "Under Test"
+        }
+    },
+    {
+        "code": "en-ca",
+        "translation": {
+            "name": "English(Canada)",
+            "search_go": "GO",
+            "construction": "Everything is under construction",
+            "temp_placeholder": "Under Test"
+        }
     }
-    
-    ,
-
-    "ct":{
-        "search_go":"搵"
-    }
-}
+]

@@ -6,8 +6,8 @@
   --c2: #436932;
   --c3: #698c42;
   --c4: #93b051;
-  --c5: #c4d461;
-  --c6: #f9f871;
+  //--c5: #c4d461;
+  //--c6: #f9f871;
   --c0: #dbdbdb;
 }
 
@@ -17,13 +17,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     //https://colorhunt.co/palette/0926351b42425c83749ec8b9
-      --c1: #092635;
-      --c2: #1B4242;
-      --c3: #5C8374;
-      --c4: #9EC8B9;
-      --c5: #c4d461;
-      --c6: #f9f871;
-      --c0: #dbdbdb;
+    --c1: #092635;
+    --c2: #1B4242;
+    --c3: #5C8374;
+    --c4: #9EC8B9;
+    //--c5: #c4d461;
+    //--c6: #f9f871;
+    --c0: #dbdbdb;
   }
 
 }
@@ -35,10 +35,10 @@
     --c2: #C7E9B0;
     --c3: #B3C99C;
     --c4: #A4BC92;
-    --c5: #c4d461;
-    --c6: #f9f871;
+    //--c5: #c4d461;
+    //--c6: #f9f871;
     --c0: #222222;
-}
+  }
 }
 
 /*
@@ -49,8 +49,8 @@
   --c2: #436932;
   --c3: #698c42;
   --c4: #93b051;
-  --c5: #c4d461;
-  --c6: #f9f871;
+  //--c5: #c4d461;
+  //--c6: #f9f871;
   --c0: #dbdbdb;
 }
 
@@ -59,8 +59,8 @@
   --c2: #436932;
   --c3: #698c42;
   --c4: #93b051;
-  --c5: #c4d461;
-  --c6: #f9f871;
+  //--c5: #c4d461;
+  //--c6: #f9f871;
   --c0: #000000;
 }
 
@@ -135,7 +135,7 @@
   margin: 0;
 }
 
-*::selection{
+*::selection {
   color: var(--c3);
   background-color: var(--c0);
 }
@@ -147,7 +147,7 @@ body {
 
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
   background-color: var(--c1);
@@ -165,6 +165,10 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 input[type=text],
 input[type=text]:hover,
 input[type=text]:focus-visible {
@@ -174,4 +178,81 @@ input[type=text]:focus-visible {
 
 }
 
+header {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0.25rem 0.5rem;
 
+  .lang_selector {
+    display: flex;
+    //gap: 0.25rem;
+    align-items: center;
+    color: var(--c0);
+    user-select: none;
+    padding: 0.25rem;
+    margin-right: 3rem;
+
+    svg {
+      height: 1.5rem;
+      stroke: var(--c0);
+    }
+
+    &:hover{
+      .language_container{
+        div.language_list {
+          display: block;
+        }
+      }
+      
+    }
+
+    .language_container {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      
+      
+      
+
+      div.selected_language_name {
+        font-size: 1rem;
+        overflow: hidden;
+        padding: 0.25rem;
+        
+      }
+
+      div.language_list {
+        display: none;
+        z-index: $layer-1;
+        position: absolute;
+        top: 1.75rem;
+
+        ul {
+
+
+          li {
+            height: fit-content;
+
+            a {
+              display: block;
+              padding: 0.25rem;
+              font-size: 1rem;
+
+              &:hover {
+                background-color: var(--c0);
+                color: var(--c1);
+              }
+            }
+          }
+        }
+      }
+
+
+
+    }
+
+
+
+  }
+}
