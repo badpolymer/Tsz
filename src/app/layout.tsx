@@ -1,11 +1,12 @@
 "use client"
-import type { Metadata} from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
 import publicURL from "@/functions/imageURL";
 import Header from "@/components/Header";
 import printOut from "@/functions/printOut";
 import Script from "next/script";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,9 +28,14 @@ export default function RootLayout({
   return (
     <html>
       <body className={inter.className} >
-        <Header></Header>
+        <Suspense>
+          <Header></Header>
+        </Suspense>
 
-        {children}
+        <Suspense>
+          {children}
+        </Suspense>
+
 
         <><Script src={publicURL(`/js/theme.js`)} /></>
       </body>
