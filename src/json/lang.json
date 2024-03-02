@@ -9,6 +9,15 @@
         }
     },
     {
+        "code": "cn",
+        "translation": {
+            "name": "國語/普通話",
+            "search_go": "找",
+            "construction": "內部裝潢施工中",
+            "temp_placeholder": "暫不營業"
+        }
+    },
+    {
         "code": "en-uk",
         "translation": {
             "name": "English(UK)",
