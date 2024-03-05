@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <main className={styles.main}>
             <div className={styles.building_emoji}>🏗️</div>
-            <div>{selectedLangPack.translation.construction}</div>
+            <div className={styles.construction}>{selectedLangPack.translation.construction}</div>
             <Suspense>
                 <HomeSearchForm></HomeSearchForm>
             </Suspense>
