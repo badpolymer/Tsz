@@ -45,23 +45,23 @@
 * Client Colour
 */
 :root[data-set-theme="dark"] {
-  --c1: #234722;
-  --c2: #436932;
-  --c3: #698c42;
-  --c4: #93b051;
+  --c1: #092635;
+  --c2: #1B4242;
+  --c3: #5C8374;
+  --c4: #9EC8B9;
   //--c5: #c4d461;
   //--c6: #f9f871;
   --c0: #dbdbdb;
 }
 
 :root[data-set-theme="light"] {
-  --c1: #234722;
-  --c2: #436932;
-  --c3: #698c42;
-  --c4: #93b051;
+  --c1: #DDFFBB;
+  --c2: #C7E9B0;
+  --c3: #B3C99C;
+  --c4: #A4BC92;
   //--c5: #c4d461;
   //--c6: #f9f871;
-  --c0: #000000;
+  --c0: #222222;
 }
 
 :root {
@@ -179,9 +179,80 @@ input[type=text]:focus-visible {
 }
 
 header {
+  $header-font-size: 1rem;
   display: flex;
+  gap: $header-font-size;
   flex-direction: row-reverse;
   padding: 0.25rem 0.5rem;
+  margin-right: 0;
+
+  .theme_switch {
+    * {
+      user-select: none;
+    }
+    $theme-transition: 0.2s all ease-in-out;
+
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+
+
+    .switch {
+      display: grid;
+      grid-template-areas: 'col-1 col-2 col-3';
+      grid-gap: 0.25 *$header-font-size ;
+      align-items: center;
+
+
+
+      .dark {
+        grid-area: col-1;
+        font-size: $header-font-size;
+        color: var(--c0);
+        transition: $theme-transition;
+      }
+
+      .light {
+        grid-area: col-3;
+        font-size: $header-font-size;
+        color: var(--c0);
+        transition: $theme-transition;
+      }
+
+      .track {
+        grid-area: col-2;
+        height: 1.25*$header-font-size;
+        width: 2.25 * $header-font-size;
+        border-radius: $header-font-size;
+        display: flex;
+        align-items: center;
+        padding: 0.25 * $header-font-size /2;
+        box-shadow: inset 0px 0px 4px -2px rgba(0, 0, 0, 0.129);
+        background-color: var(--c4);
+        transition: $theme-transition;
+
+        .toggle {
+          border-radius: 50%;
+          background-color: var(--c1);
+          width: $header-font-size;
+          height: $header-font-size;
+          transition: $theme-transition;
+          cursor: pointer;
+
+          @media (prefers-color-scheme: light) {
+            transform: translateX($header-font-size);
+          }
+
+          &[data-set-theme="light"]{
+            transform: translateX($header-font-size);
+          }
+
+        }
+      }
+
+    }
+  }
+
 
   .lang_selector {
     display: flex;
@@ -197,13 +268,13 @@ header {
       stroke: var(--c0);
     }
 
-    &:hover{
-      .language_container{
+    &:hover {
+      .language_container {
         div.language_list {
           display: block;
         }
       }
-      
+
     }
 
     .language_container {
@@ -211,15 +282,15 @@ header {
       flex-direction: column;
       position: relative;
 
-      
-      
-      
+
+
+
 
       div.selected_language_name {
-        font-size: 1rem;
+        font-size: $header-font-size;
         overflow: hidden;
-        padding: 0.25rem;
-        
+        padding: 0.25 * $header-font-size;
+
       }
 
       div.language_list {
@@ -237,7 +308,7 @@ header {
             a {
               display: block;
               padding: 0.25rem;
-              font-size: 1rem;
+              font-size: $header-font-size;
 
               &:hover {
                 background-color: var(--c0);

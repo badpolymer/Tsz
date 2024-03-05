@@ -5,7 +5,9 @@
             "name": "粵語/廣東話",
             "search_go": "搵",
             "construction": "密鑼緊鼓施工中",
-            "temp_placeholder": "重未用得住"
+            "temp_placeholder": "重未用得住",
+            "theme_light": "光",
+            "theme_dark": "暗"
         }
     },
     {
@@ -14,7 +16,9 @@
             "name": "國語/普通話",
             "search_go": "找",
             "construction": "內部裝潢施工中",
-            "temp_placeholder": "暫不營業"
+            "temp_placeholder": "暫不營業",
+            "theme_light": "光",
+            "theme_dark": "暗"
         }
     },
     {
@@ -23,7 +27,9 @@
             "name": "English(UK)",
             "search_go": "GO",
             "construction": "Everything is under construction",
-            "temp_placeholder": "Under Test"
+            "temp_placeholder": "Under Test",
+            "theme_light": "Light",
+            "theme_dark": "Dark"
         }
     },
     {
@@ -32,7 +38,9 @@
             "name": "English(US)",
             "search_go": "GO",
             "construction": "Everything is under construction",
-            "temp_placeholder": "Under Test"
+            "temp_placeholder": "Under Test",
+            "theme_light": "Light",
+            "theme_dark": "Dark"
         }
     },
     {
@@ -41,7 +49,9 @@
             "name": "English(Canada)",
             "search_go": "GO",
             "construction": "Everything is under construction",
-            "temp_placeholder": "Under Test"
+            "temp_placeholder": "Under Test",
+            "theme_light": "Light",
+            "theme_dark": "Dark"
         }
     }
 ]
