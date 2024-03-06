@@ -56,7 +56,7 @@ export default function ThemeSwitch({
                     break;
             }
         }
-    }, []);
+    }, [toggleID]);
 
     if (!localStorageAvailable) {
         return null;
