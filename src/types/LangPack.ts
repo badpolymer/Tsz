@@ -1,5 +1,6 @@
 export type Translation = {
     name: string,
+    site_title: string,
     search_go: string,
     construction: string,
     temp_placeholder: string

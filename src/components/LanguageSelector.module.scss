@@ -1,0 +1,71 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.lang_selector {
+    display: flex;
+    //gap: 0.25rem;
+    align-items: center;
+    color: var(--c0);
+    user-select: none;
+    padding: 0.25rem;
+    margin-right: 3rem;
+
+    svg {
+        height: 1.5rem;
+        stroke: var(--c0);
+    }
+
+    &:hover {
+        .language_container {
+            div.language_list {
+                display: block;
+            }
+        }
+
+    }
+
+    .language_container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        div.selected_language_name {
+            font-size: $header-font-size;
+            overflow: hidden;
+            padding: 0.25 * $header-font-size;
+
+        }
+
+        div.language_list {
+            display: none;
+            z-index: $layer-1;
+            position: absolute;
+            top: 1.75rem;
+
+            ul {
+
+
+                li {
+                    height: fit-content;
+
+                    a {
+                        display: block;
+                        padding: 0.25rem;
+                        font-size: $header-font-size;
+
+                        &:hover {
+                            background-color: var(--c0);
+                            color: var(--c1);
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+    }
+
+
+
+}

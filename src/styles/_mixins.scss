@@ -1,0 +1,25 @@
+@import "@/styles/variables";
+
+
+@function transition($prop: all, $duration: 0.2s, $timing-function: ease, $delay: 0s) {
+    @return ($prop $duration $timing-function $delay);
+}
+
+@mixin transition-even-speed($duration, $props...) {
+    $joined-transitions: ();
+
+    @each $prop in $props {
+        $transition: transition($prop, $duration, linear, 0s);
+        $joined-transitions: append($joined-transitions, $transition, $separator: comma);
+        
+    }
+
+    -webkit-transition: $joined-transitions;
+    transition: $joined-transitions;
+
+}
+
+
+@mixin theme-switch-transition(){
+    @include transition-even-speed($theme-change-transition-duration, color, background-color, fill, transform);
+}

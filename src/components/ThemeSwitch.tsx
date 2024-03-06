@@ -1,68 +1,100 @@
 "use client"
 
 import printOut from "@/functions/printOut";
+import styles from "./ThemeSwitch.module.scss"
+import { storageAvailable } from "@/functions/storageAvailable";
 import { useLanguagePack } from "@/hooks/useLanguagePack";
-import { useEffect, MouseEvent } from "react";
+import { useEffect, MouseEvent, useState } from "react";
 
 
+export default function ThemeSwitch({
 
-export default function ThemeSwitch() {
+}: {
+
+    }) {
+    const toggleID = `ts_toggle`;
     const locale = useLanguagePack().translation;
-    let isLightMode = false;
+    const [localStorageAvailable, setLocalStorageAvail] = useState(true);
 
+    // Init
     useEffect(() => {
-        printOut(`Effect!!!!!!!!!!!!!!!!!!!!!`)
-        // Check to see if Media-Queries are supported
-        if (window.matchMedia) {
-            // Check if the dark-mode Media-Query matches
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                // Dark
-                document.documentElement.setAttribute(`data-set-theme`, "dark");
-                
-            } else {
-                // Light
-                document.documentElement.setAttribute(`data-set-theme`, "light");
-                
-            }
+        printOut(`!!!!Theme Switch One-time Effect!!!!`)
+        // If local storage is not available,
+        // do not render the theme switch
+        if (!storageAvailable(`localStorage`)) {
+            printOut(`Local Storage NOT OK`)
+            //localStorageAvailable = false;
+            setLocalStorageAvail(false);
         } else {
-            // Default (when Media-Queries are not supported)
-            document.documentElement.setAttribute(`data-set-theme`, "dark");
-            
+            setLocalStorageAvail(true);
+            // Read the theme value from the local storage
+            const storedTheme = window.localStorage.getItem(`theme`);
+            const toggle = document.getElementById(toggleID) as HTMLElement;
+            switch (storedTheme) {
+                case `dark`:
+                    toggle.setAttribute(`data-set-theme`, "dark");
+                    break;
+                case `light`:
+                    toggle.setAttribute(`data-set-theme`, "light");
+                    break;
+                default:
+                    if (window.matchMedia) {
+                        // Check if the dark-mode Media-Query matches
+                        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                            // Dark
+                            toggle.setAttribute(`data-set-theme`, "dark");
+
+                        } else {
+                            // Light
+                            toggle.setAttribute(`data-set-theme`, "light");
+                        }
+                    } else {
+                        // Default (when Media-Queries are not supported)
+
+                        toggle.setAttribute(`data-set-theme`, "dark");
+                    }
+                    break;
+            }
         }
-    },[]);
+    }, []);
+
+    if (!localStorageAvailable) {
+        return null;
+    }
 
 
-
-    const handleClick = (e:MouseEvent) => {
+    const handleClick = (e: MouseEvent) => {
         printOut(`click switch`)
-        const theme = document.documentElement.getAttribute(`data-set-theme`);
-        const label = e.target as HTMLElement;
-        printOut(theme);
+        const toggle = document.getElementById(toggleID) as HTMLElement;
+        const theme = toggle.getAttribute(`data-set-theme`);
         if (theme && theme == `dark`) {
-            printOut(`theme is dark`)
+            // Switch to Light
+            toggle.setAttribute(`data-set-theme`, "light");
             document.documentElement.setAttribute(`data-set-theme`, "light");
-            label.setAttribute(`data-set-theme`, "light");
+            window.localStorage.setItem(`theme`, `light`);
+            printOut(`Switch to Light`)
+
         } else if (theme && theme == `light`) {
-            printOut(`theme is light`)
+            // Switch to Dark
+            toggle.setAttribute(`data-set-theme`, "dark");
             document.documentElement.setAttribute(`data-set-theme`, "dark");
-            label.setAttribute(`data-set-theme`, "dark");
+            window.localStorage.setItem(`theme`, `dark`);
+            printOut(`Switch to Dark`)
         }
-
-        
-        
-
-
 
     }
 
+
+
+
     return (
-        <div className="theme_switch">
-            <label className="switch" >
-                <span className="track">
-                    <span className="toggle" onClick={(e)=>handleClick(e)}></span>
+        <div className={styles.theme_switch}>
+            <label className={styles.switch} onClick={(e) => handleClick(e)}>
+                <span className={styles.track}>
+                    <span id={toggleID} className={styles.toggle} ></span>
                 </span>
-                <span className="dark">{locale.theme_dark}</span>
-                <span className="light">{locale.theme_light}</span>
+                <span className={styles.dark}>{locale.theme_dark}</span>
+                <span className={styles.light}>{locale.theme_light}</span>
             </label>
         </div>
     )

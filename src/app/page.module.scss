@@ -1,4 +1,5 @@
-@import "variables";
+@import "@/styles/variables";
+@import "@/styles/mixins";
 
 $search-bar-border-radius: 0.2rem;
 
@@ -9,22 +10,22 @@ $search-bar-border-radius: 0.2rem;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  padding: 6rem;
-  min-height: 100vh;
-  transition: all 1s;
+  padding: 3rem 6rem;
+  @include transition-even-speed($media-size-transition-duration, all);
 
-}
-
-.main {
-  .building_emoji{
-    font-size: 10rem;
-    transition: all 1s;
+  &* {
+    @include transition-even-speed($media-size-transition-duration, all);
   }
 
-  .construction{
+  .building_emoji {
+    font-size: 10rem;
+
+  }
+
+  .construction {
     font-size: 2rem;
     color: var(--c0);
-    transition: all 1s;
+
   }
 }
 
@@ -77,7 +78,7 @@ $search-bar-border-radius: 0.2rem;
       border-radius: 0 $search-bar-border-radius $search-bar-border-radius 0;
       height: 3rem;
       font-size: 1.5rem;
-      font-weight:600;
+      font-weight: 600;
       color: var(--c0);
       padding-left: 1rem;
       padding-right: 1rem;
@@ -112,7 +113,8 @@ $search-bar-border-radius: 0.2rem;
         user-select: none;
         color: var(--c0);
 
-        &:hover,&[data-arrow-selected=true] {
+        &:hover,
+        &[data-arrow-selected=true] {
           background-color: var(--c3);
           color: var(--c0);
         }
@@ -140,15 +142,16 @@ $search-bar-border-radius: 0.2rem;
   .main {
     padding: 2rem;
 
-    .building_emoji{
+    .building_emoji {
       font-size: 5rem;
     }
-  
-    div{
+
+    .construction {
       font-size: 1.25rem;
       color: var(--c0);
     }
   }
+
   .grid {
     grid-template-columns: repeat(2, 50%);
   }

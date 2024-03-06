@@ -3,6 +3,7 @@
         "code": "ct",
         "translation": {
             "name": "粵語/廣東話",
+            "site_title":"匯典",
             "search_go": "搵",
             "construction": "密鑼緊鼓施工中",
             "temp_placeholder": "重未用得住",
@@ -14,6 +15,7 @@
         "code": "mdr",
         "translation": {
             "name": "國語/普通話",
+            "site_title":"匯典",
             "search_go": "找",
             "construction": "內部裝潢施工中",
             "temp_placeholder": "暫不營業",
@@ -25,6 +27,7 @@
         "code": "en-uk",
         "translation": {
             "name": "English(UK)",
+            "site_title":"Tsz",
             "search_go": "GO",
             "construction": "Everything is under construction",
             "temp_placeholder": "Under Test",
@@ -36,6 +39,7 @@
         "code": "en-us",
         "translation": {
             "name": "English(US)",
+            "site_title":"Tsz",
             "search_go": "GO",
             "construction": "Everything is under construction",
             "temp_placeholder": "Under Test",
@@ -47,6 +51,7 @@
         "code": "en-ca",
         "translation": {
             "name": "English(Canada)",
+            "site_title":"Tsz",
             "search_go": "GO",
             "construction": "Everything is under construction",
             "temp_placeholder": "Under Test",
