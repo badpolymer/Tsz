@@ -11,10 +11,10 @@ $search-bar-border-radius: 0.2rem;
   align-items: center;
   gap: 1rem;
   padding: 3rem 6rem;
-  @include transition-even-speed($media-size-transition-duration, all);
+  //@include transition-even-speed($media-size-transition-duration, all);
 
   &* {
-    @include transition-even-speed($media-size-transition-duration, all);
+    //@include transition-even-speed($media-size-transition-duration, all);
   }
 
   .building_emoji {

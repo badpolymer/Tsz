@@ -14,12 +14,12 @@
         
     }
 
-    -webkit-transition: $joined-transitions;
+    // -webkit-transition: $joined-transitions;
     transition: $joined-transitions;
 
 }
 
 
 @mixin theme-switch-transition(){
-    @include transition-even-speed($theme-change-transition-duration, color, background-color, fill, transform);
+    @include transition-even-speed($theme-change-transition-duration, background-color, transform);
 }
