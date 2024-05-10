@@ -3,7 +3,6 @@
 import printOut from "@/functions/printOut";
 import styles from "./ThemeSwitch.module.scss"
 import { storageAvailable } from "@/functions/storageAvailable";
-import { useLanguagePack } from "@/hooks/useLanguagePack";
 import { useEffect, MouseEvent, useState } from "react";
 import { Translation } from "@/types/LanguagePack";
 

@@ -46,7 +46,7 @@ export default function RootLayout({
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
           // Dark
           document.documentElement.setAttribute(`data-set-theme`, "dark");
-   
+
         } else {
           // Light
           document.documentElement.setAttribute(`data-set-theme`, "light");
@@ -92,7 +92,7 @@ export default function RootLayout({
       }
     }
 
-  },[])
+  }, [])
 
   printOut(`Rendered Root Layout`);
 
@@ -101,9 +101,9 @@ export default function RootLayout({
 
       {/* <body className={noto.className}> */}
       <body className={myFont.className}>
-        
+        <Suspense>
           <Header languagePacks={languagePacks as [LanguagePack]} locale={locale} ></Header>
-        
+        </Suspense>
 
         <Suspense>
           {children}
