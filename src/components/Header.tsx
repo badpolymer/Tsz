@@ -3,22 +3,22 @@ import LanguageSelector from "./LanguageSelector";
 import ThemeSwitch from "./ThemeSwitch";
 import { LanguagePack, Translation } from "@/types/LanguagePack";
 
-export default function Header({ 
+export default function Header({
     languagePacks
-    ,locale
+    , locale
 
 }: {
-    languagePacks:[LanguagePack]
-    ,locale:Translation
-    }) {
+    languagePacks: [LanguagePack]
+    , locale: Translation
+}) {
     return (
         <header>
-            
+            <Suspense>
                 <LanguageSelector languagePacks={languagePacks}></LanguageSelector>
-            
-            
-                <ThemeSwitch locale={locale}></ThemeSwitch>
-            
+            </Suspense>
+
+            <ThemeSwitch locale={locale}></ThemeSwitch>
+
 
         </header>
     )
