@@ -8,7 +8,8 @@ import printOut from "@/functions/printOut";
 import { Suspense, useEffect, useState } from "react";
 import { storageAvailable } from "@/functions/storageAvailable";
 import { useLanguagePack } from "@/hooks/useLanguagePack";
-import { ThemeType } from "@/types/ThemeType";
+import languagePacks from '@/json/languagePacks.json';
+import { LanguagePack } from "@/types/LanguagePack";
 
 //const noto = Noto_Serif_HK({ preload:false});
 //https://github.com/vercel/next.js/discussions/47309
@@ -30,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   printOut(`Rendering Root Layout`);
-  //const locale = useLanguagePack().translation;
+  const locale = useLanguagePack().translation;
 
   // Init
   // Set theme and local storage
@@ -93,11 +94,6 @@ export default function RootLayout({
 
   },[])
 
-  const handleThemeChange = (t: ThemeType) => {
-
-  }
-
-
   printOut(`Rendered Root Layout`);
 
   return (
@@ -105,9 +101,9 @@ export default function RootLayout({
 
       {/* <body className={noto.className}> */}
       <body className={myFont.className}>
-        <Suspense>
-          <Header></Header>
-        </Suspense>
+        
+          <Header languagePacks={languagePacks as [LanguagePack]} locale={locale} ></Header>
+        
 
         <Suspense>
           {children}

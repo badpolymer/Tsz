@@ -54,11 +54,16 @@ $search-bar-border-radius: 0.2rem;
 
         background-color: var(--c2);
         color: var(--c0);
-
+        &::placeholder {
+          color: var(--c3);
+          opacity: 1; /* Firefox */
+        }
 
         &[data-preview-loaded=true] {
           border-bottom-left-radius: 0;
         }
+
+
       }
 
       svg {

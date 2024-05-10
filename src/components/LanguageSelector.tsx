@@ -1,18 +1,23 @@
 "use client"
 import styles from "@/components/LanguageSelector.module.scss"
-import { LangPack } from "@/types/LangPack";
+import { LanguagePack } from "@/types/LanguagePack";
 import printOut from "@/functions/printOut"
-import lang from "@/json/lang.json"
+//import languagePacks from "@/json/languagePacks.json"
 import { ReadonlyURLSearchParams, RedirectType, redirect, usePathname, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 
-export default function LanguageSelector() {
+export default function LanguageSelector({
+    languagePacks
+
+}: {
+    languagePacks: [LanguagePack]
+}) {
     const pathname = usePathname();
     // Retrieve language packages and all available language codes
-    const langPacks = lang as [LangPack];
+    //const langPacks = languagePacks as [LanguagePack];
     let availableLangCodes = Array<string>();
-    langPacks.forEach(lp => {
+    languagePacks.forEach(lp => {
         availableLangCodes.push(lp.code);
     });
     //printOut(langCodes);
@@ -43,7 +48,7 @@ export default function LanguageSelector() {
     // If the language code matches, then get the name of the language
     const finalLangCode = searchParams.get(`lang`);
     printOut(`Final Language Code: ${finalLangCode}`);
-    const selectedLangPack = langPacks.find(lp => lp.code == finalLangCode);
+    const selectedLangPack = languagePacks.find(lp => lp.code == finalLangCode);
     const selectedLangName = selectedLangPack?.translation.name;
 
     return (
@@ -56,7 +61,7 @@ export default function LanguageSelector() {
                 <div className={styles.language_list}>
                     <ul>
                         {
-                            langPacks.map((lp) => {
+                            languagePacks.map((lp) => {
                                 const name = lp.translation.name;
                                 params.set(`lang`, lp.code);
                                 if (lp.code == finalLangCode) {

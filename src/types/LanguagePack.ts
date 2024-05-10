@@ -8,7 +8,7 @@ export type Translation = {
     theme_dark: string
 }
 
-export type LangPack = {
+export type LanguagePack = {
     code: string,
     translation: Translation
 }

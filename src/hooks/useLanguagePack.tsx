@@ -1,5 +1,5 @@
-import { LangPack } from "@/types/LangPack";
-import lang from '@/json/lang.json';
+import { LanguagePack } from "@/types/LanguagePack";
+import lang from '@/json/languagePacks.json';
 import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 /**
  * Get the associated language package
@@ -8,7 +8,7 @@ import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
  * @returns 
  */
 export function useLanguagePack() {
-    const langPacks = lang as [LangPack];
+    const langPacks = lang as [LanguagePack];
     // Check the language code in the url
     const searchParams = useSearchParams() || new ReadonlyURLSearchParams(new URLSearchParams());
     const paramLangCode = searchParams.get(`lang`);
