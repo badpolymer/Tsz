@@ -25,8 +25,10 @@ export default function Home() {
             let up = true;
             setInterval(() => {
                 //printOut(opacity / 100);
-                title!.innerHTML = titles[index];
-                title.style.opacity = (opacity / 100).toString();
+                if(title){
+                    title.innerHTML = titles[index];
+                    title.style.opacity = (opacity / 100).toString();
+                }
                 const currentUp = up;
                 if (opacity / 100 == 1) {
                     up = false;
