@@ -17,7 +17,7 @@ export default function Header({
                 <LanguageSelector languagePacks={languagePacks}></LanguageSelector>
             </Suspense>
 
-            <ThemeSwitch locale={locale}></ThemeSwitch>
+            <ThemeSwitch></ThemeSwitch>
 
 
         </header>
