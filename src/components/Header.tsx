@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import LanguageSelector from "./LanguageSelector";
-import ThemeSwitch from "./ThemeSwitch";
 import { LanguagePack, Translation } from "@/types/LanguagePack";
 
 export default function Header({
@@ -16,9 +15,6 @@ export default function Header({
             <Suspense>
                 <LanguageSelector languagePacks={languagePacks}></LanguageSelector>
             </Suspense>
-
-            <ThemeSwitch></ThemeSwitch>
-
 
         </header>
     )

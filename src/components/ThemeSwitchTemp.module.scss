@@ -1,0 +1,121 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
+.theme_switch {
+
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        width: 3rem;
+        height: 3rem;
+        border: none;
+        border-radius: 50%;
+
+        &:hover {
+            background-color: var(--c4);
+            cursor: pointer;
+        }
+
+        svg {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--c0);
+        }
+    }
+
+
+    // * {
+    //     user-select: none;
+    //     cursor: pointer;
+    //     @include theme-switch-transition();
+    // }
+
+
+
+    // padding: 0.25rem;
+    // display: flex;
+    // align-items: center;
+
+
+    // .switch {
+    //     display: grid;
+    //     grid-template-areas: 'col-1 col-2 col-3';
+    //     gap: 0.25 *$header-font-size ;
+    //     align-items: center;
+
+
+
+    //     .dark {
+    //         grid-area: col-1;
+    //         font-size: $header-font-size;
+    //         color: var(--c0);
+
+    //     }
+
+    //     .light {
+    //         grid-area: col-3;
+    //         font-size: $header-font-size;
+    //         color: var(--c0);
+
+    //     }
+
+    //     .track {
+    //         grid-area: col-2;
+    //         height: 1.25*$header-font-size;
+    //         width: 2.25 * $header-font-size;
+    //         border-radius: $header-font-size;
+    //         display: flex;
+    //         align-items: center;
+    //         padding: 0.25 * $header-font-size /2;
+    //         box-shadow: inset 0px 0px 4px -2px rgba(0, 0, 0, 0.129);
+    //         background-color: var(--c4);
+
+
+    //         .toggle {
+    //             border-radius: 50%;
+    //             background-color: var(--c1);
+    //             width: $header-font-size;
+    //             height: $header-font-size;
+
+
+    //             @media (prefers-color-scheme: light) {
+    //                 transform: translateX($header-font-size);
+    //             }
+
+    //             &[data-set-theme="light"] {
+    //                 transform: translateX($header-font-size);
+    //             }
+
+    //             &[data-set-theme="dark"] {
+    //                 transform: translateX(0);
+    //             }
+
+    //         }
+    //     }
+
+    // }
+}
+
+@media (max-width: 768px) {
+
+    .theme_button {
+        bottom: 1rem;
+        right: 1rem;
+
+        button {
+            width: 1.5rem;
+            height: 1.5rem;
+
+            svg {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+    }
+}

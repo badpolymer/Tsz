@@ -1,7 +1,6 @@
-import { storageAvailable } from "@/functions/storageAvailable";
 import styles from "./page.module.scss";
 import languagePacks from "@/json/languagePacks.json";
-import ThemeSwitch from "@/components/ThemeSwitch";
+import ThemeSwitch from "@/components/ThemeSwitchTemp";
 
 export async function generateStaticParams() {
 
