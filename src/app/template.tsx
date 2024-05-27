@@ -15,7 +15,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
     // Init
     // Set theme and local storage
     useEffect(() => {
-        printOut(`!!!!Root Layout One-time Effect!!!!`);
+        printOut(`!!!!Root Template One-time Effect!!!!`);
         if (!storageAvailable(`localStorage`)) {
             printOut(`Local Storage NOT OK`)
 
@@ -52,18 +52,18 @@ export default function Template({ children }: { children: React.ReactNode }) {
                         // Check if the dark-mode Media-Query matches
                         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                             // Dark
-                            printOut(`prefers-color-scheme: dark`)
+                            printOut(`prefers-color-scheme: dark`);
                             document.documentElement.setAttribute(`data-set-theme`, "dark");
                             window.localStorage.setItem(`theme`, `dark`);
                         } else {
                             // Light
-                            printOut(`prefers-color-scheme: light`)
+                            printOut(`prefers-color-scheme: light`);
                             document.documentElement.setAttribute(`data-set-theme`, "light");
                             window.localStorage.setItem(`theme`, `light`);
                         }
                     } else {
                         // Default (when Media-Queries are not supported)
-                        printOut(`prefers-color-scheme: none`)
+                        printOut(`prefers-color-scheme: none`);
                         document.documentElement.setAttribute(`data-set-theme`, "dark");
                         window.localStorage.setItem(`theme`, `dark`);
                     }

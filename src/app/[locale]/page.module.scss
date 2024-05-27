@@ -11,11 +11,7 @@ $search-bar-border-radius: 0.2rem;
   align-items: center;
   gap: 1rem;
   padding: 3rem 6rem;
-  //@include transition-even-speed($media-size-transition-duration, all);
 
-  &* {
-    //@include transition-even-speed($media-size-transition-duration, all);
-  }
 
   .building_emoji {
     font-size: 10rem;
@@ -27,6 +23,35 @@ $search-bar-border-radius: 0.2rem;
     color: var(--c0);
 
   }
+
+  .theme_button {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      width: 3rem;
+      height: 3rem;
+      border: none;
+      border-radius: 50%;
+
+      &:hover {
+        background-color: var(--c4);
+        cursor: pointer;
+      }
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--c0);
+      }
+    }
+  }
+
 }
 
 .form {
@@ -54,9 +79,11 @@ $search-bar-border-radius: 0.2rem;
 
         background-color: var(--c2);
         color: var(--c0);
+
         &::placeholder {
           color: var(--c3);
-          opacity: 1; /* Firefox */
+          opacity: 1;
+          /* Firefox */
         }
 
         &[data-preview-loaded=true] {
@@ -154,6 +181,21 @@ $search-bar-border-radius: 0.2rem;
     .construction {
       font-size: 1.25rem;
       color: var(--c0);
+    }
+
+    .theme_button {
+      bottom: 1rem;
+      right: 1rem;
+
+      button {
+        width: 1.5rem;
+        height: 1.5rem;
+
+        svg {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
     }
   }
 
