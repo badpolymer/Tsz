@@ -8,10 +8,9 @@ import { storageAvailable } from "@/functions/storageAvailable";
 
 
 
-export default function Home({ params }: { params: { locale: string } }) {
+export default function Home() {
 
     const titleID = `4d5s6f43484rt34`;
-
 
     useEffect(() => {
         //Animation of Title
@@ -26,7 +25,7 @@ export default function Home({ params }: { params: { locale: string } }) {
             let up = true;
             setInterval(() => {
                 //printOut(opacity / 100);
-                title.innerHTML = titles[index];
+                title.innerHTML = titles[index]? titles[index]:`Error`;
                 title.style.opacity = (opacity / 100).toString();
                 const currentUp = up;
                 if (opacity / 100 == 1) {
@@ -53,7 +52,7 @@ export default function Home({ params }: { params: { locale: string } }) {
 
             }, 100);
         }
-    }, []);
+    }, [titleID]);
 
 
 
