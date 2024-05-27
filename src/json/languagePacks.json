@@ -4,6 +4,7 @@
         "translation": {
             "name": "粵語/廣東話",
             "site_title":"匯典",
+            "select_language":"請揀語言",
             "search_go": "搵",
             "construction": "密鑼緊鼓施工中",
             "temp_placeholder": "重未用得住",
@@ -16,6 +17,7 @@
         "translation": {
             "name": "國語/普通話",
             "site_title":"匯典",
+            "select_language":"請選擇語言",
             "search_go": "找",
             "construction": "內部裝潢施工中",
             "temp_placeholder": "暫不營業",
@@ -28,6 +30,7 @@
         "translation": {
             "name": "English(UK)",
             "site_title":"Tsz",
+            "select_language":"Please Select Language",
             "search_go": "GO",
             "construction": "Everything is under construction",
             "temp_placeholder": "Under Test",
@@ -40,6 +43,7 @@
         "translation": {
             "name": "English(US)",
             "site_title":"Tsz",
+            "select_language":"Please Select Language",
             "search_go": "GO",
             "construction": "Everything is under construction",
             "temp_placeholder": "Under Test",
@@ -52,6 +56,7 @@
         "translation": {
             "name": "English(Canada)",
             "site_title":"Tsz",
+            "select_language":"Please Select Language",
             "search_go": "GO",
             "construction": "Everything is under construction",
             "temp_placeholder": "Under Test",

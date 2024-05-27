@@ -1,6 +1,6 @@
 import printOut from "@/functions/printOut";
 import { FormEvent, useEffect, useState, KeyboardEvent } from "react";
-import styles from "@/app/page.module.scss";
+import styles from "@/app/[locale]/page.module.scss";
 import index from '@/json/index.json';
 import { useLanguagePack } from "@/hooks/useLanguagePack";
 
