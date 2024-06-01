@@ -11,7 +11,7 @@ const myFont = localFont({
 
 export default function Template({ children }: { children: React.ReactNode }) {
 
-
+    printOut(`Root Template begin`);
     // Init
     // Set theme and local storage
     useEffect(() => {
@@ -72,6 +72,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         }
 
     }, [])
+
+    printOut(`Root Template End`);
 
     return (
         <body className={myFont.className}>

@@ -11,17 +11,17 @@ export default function LanguageSelector({
 }: {
 
     }) {
+    printOut(`Language Selector Begin`);
     const { locale }: { locale: string } = useParams();
-    const availableLangCodes = getLanguageCodes();
     const languagePacks = getLanguagePacks();
     const currentPath = usePathname();
-    printOut(currentPath);
+    
     // Define a regular expression to match the first two segments
     const regex = /^\/([^/]+)\/([^/]+)/;
     // Replace the first two segments with the replacement string
     const newPath = (replacement:string) => currentPath.replace(regex, `/${replacement}/$2`);
 
-
+    printOut(`Language Selector End`);
     return (
         <div className={styles.lang_selector} tabIndex={0}>
 

@@ -4,10 +4,11 @@ import styles from "./page.module.scss";
 import { getLanguagePacks } from "@/locales/languagePack";
 import Link from "next/link";
 import ThemeSwitch from "@/components/ThemeSwitchTemp";
+import printOut from "@/functions/printOut";
 
 
-export default function Home() {
-
+export default function Landing() {
+    printOut(`Landing Page begin`);
     const titleID = `4d5s6f43484rt34`;
 
     useEffect(() => {
@@ -54,7 +55,7 @@ export default function Home() {
     }, [titleID]);
 
 
-
+    printOut(`Landing Page End`);
     return (
         <main className={styles.main}>
 

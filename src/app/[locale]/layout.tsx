@@ -1,3 +1,4 @@
+import printOut from "@/functions/printOut";
 import { getLanguageCodes } from "@/locales/languagePack";
 
 
@@ -13,6 +14,8 @@ export default function Layout({
 }: {
   children: React.ReactNode
 }) {
+  printOut(`Locale Layout Begin`);
+  printOut(`Locale Layout End`);
   return children
 
 }

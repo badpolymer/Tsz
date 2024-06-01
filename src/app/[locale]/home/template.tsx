@@ -1,5 +1,6 @@
 "use client"
 import Header from "@/components/Header";
+import printOut from "@/functions/printOut";
 import { useParams } from "next/navigation";
 
 
@@ -9,7 +10,8 @@ export default function Template({
     children: React.ReactNode,
     
  }) {
- 
+    printOut(`Home Template Begin`);
+    printOut(`Home Template End`);
 
     return (
         <>

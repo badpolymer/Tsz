@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 // import { Noto_Serif_HK } from "next/font/google";
 import "./globals.scss";
+import printOut from "@/functions/printOut";
 
 
 //const noto = Noto_Serif_HK({ preload:false});
@@ -72,7 +73,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  printOut(`Root layout`);
   return (
     <html>
       {/* <body className={noto.className}> */}
