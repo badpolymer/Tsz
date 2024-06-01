@@ -2,10 +2,11 @@ import printOut from "@/functions/printOut";
 import { FormEvent, useEffect, useState, KeyboardEvent } from "react";
 import styles from "@/app/[locale]/page.module.scss";
 import index from '@/json/index.json';
-import { useLanguagePack } from "@/hooks/useLanguagePack";
+import { getLanguagePack } from "@/locales/languagePack";
+
 
 export default function HomeSearchForm() {
-    const locale = useLanguagePack().translation;
+    const locale = getLanguagePack(`locale`);
     printOut(`Generate Form`);
     const previewNumber = 5;
     let previewLoaded = false;
@@ -183,7 +184,7 @@ export default function HomeSearchForm() {
                     <input type="text"
                         name="search"
                         id="search"
-                        placeholder={locale.temp_placeholder}
+                        placeholder={locale.v1.placeholder}
                         value={inputText}
                         onChange={(e) => {
 
