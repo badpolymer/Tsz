@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import styles from "./page.module.scss";
-import languagePacks from "@/json/languagePacks.json";
+import { getLanguagePacks } from "@/locales/languagePack";
 import Link from "next/link";
 import ThemeSwitch from "@/components/ThemeSwitchTemp";
 
@@ -14,7 +14,7 @@ export default function Home() {
         //Animation of Title
         let title = document.getElementById(titleID);
         if (title) {
-            const titles = languagePacks
+            const titles = getLanguagePacks()
                 .map((languagePack) => languagePack.translation.select_language)
                 .filter((value, index, self) => self.indexOf(value) == index);
             let opacity = 0;
@@ -22,7 +22,7 @@ export default function Home() {
             let index = 0;
             let up = true;
             setInterval(() => {
-                if(title){
+                if (title) {
                     title.innerHTML = titles[index];
                     title.style.opacity = (opacity / 100).toString();
                 }
@@ -62,7 +62,7 @@ export default function Home() {
             <div className={`dialogue ${styles.select_language}`}>
                 <ul>
                     {
-                        languagePacks.map((languagePack) => {
+                        getLanguagePacks().map((languagePack) => {
                             return <li key={languagePack.code}>
                                 <Link href={`/${languagePack.code}`}>
                                     <span>{languagePack.translation.name}</span>

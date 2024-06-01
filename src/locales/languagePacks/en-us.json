@@ -1,0 +1,13 @@
+{
+    "name": "English(US)",
+    "site_title": "Tsz",
+    "select_language": "Please Select Language",
+    "search_go": "GO",
+    "theme_light": "Light Mode",
+    "theme_dark": "Dark Mode",
+    "switch_theme":"Switch To ",
+    "v1": {
+        "construction": "Everything is under construction",
+        "placeholder": "Under Test"
+    }
+}

@@ -1,7 +1,12 @@
 @import "@/styles/variables";
 @import "@/styles/mixins";
 
+.visual_hidden {
+    visibility: hidden;
+}
+
 .theme_switch {
+    position: relative;
 
     * {
         user-select: none;
@@ -13,46 +18,65 @@
     display: flex;
     align-items: center;
 
-
     .switch {
         display: grid;
         grid-template-areas: 'col-1 col-2 col-3';
         gap: 0.25 *$header-font-size ;
         align-items: center;
 
+        &:focus::after { ////Accessibility Control
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            content: attr(title);
+            color: var(--c0);
+            background-color: var(--c1);
+            padding: 1px 2px;
+            border: solid 1px #ddd;
+            transform: translateX(-50%);
+            font-size: 0.5 * $header-font-size;
+            min-width: 3 * $header-font-size;
+            
 
+        }
+
+        svg {
+            width: $header-font-size;
+            height: $header-font-size;
+            fill: var(--c0);
+        }
 
         .dark {
             grid-area: col-1;
             font-size: $header-font-size;
             color: var(--c0);
-
+            height: $header-font-size;
         }
 
         .light {
             grid-area: col-3;
             font-size: $header-font-size;
             color: var(--c0);
-
+            height: $header-font-size;
         }
 
         .track {
             grid-area: col-2;
-            height: 1.25*$header-font-size;
-            width: 2.25 * $header-font-size;
+            height: 1 * $header-font-size;
+            width: 2 * $header-font-size;
             border-radius: $header-font-size;
             display: flex;
             align-items: center;
-            padding: 0.25 * $header-font-size /2;
-            box-shadow: inset 0px 0px 4px -2px rgba(0, 0, 0, 0.129);
+            padding: 0.1 * $header-font-size /2;
+            box-shadow: inset 0px 0px 6px 4px rgba(0, 0, 0, 0.129);
             background-color: var(--c4);
 
 
             .toggle {
                 border-radius: 50%;
                 background-color: var(--c1);
-                width: $header-font-size;
-                height: $header-font-size;
+                width: 0.9*$header-font-size;
+                height: 0.9*$header-font-size;
 
 
                 @media (prefers-color-scheme: light) {

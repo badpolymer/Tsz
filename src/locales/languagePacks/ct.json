@@ -1,0 +1,13 @@
+{
+    "name": "粵語/廣東話",
+    "site_title": "匯典",
+    "select_language": "請揀語言",
+    "search_go": "搵",
+    "theme_light": "光色主題",
+    "theme_dark": "暗色主題",
+    "switch_theme":"換置",
+    "v1": {
+        "construction": "密鑼緊鼓施工中",
+        "placeholder": "重未用得住"
+    }
+}

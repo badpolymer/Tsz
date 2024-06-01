@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       'en-US': `en-us`,
       'en-GB': `/en-uk`,
       'zh-HK': `/ct`,
-      'zh-TW': `/mdr`,
+      'zh-TW': `/md`,
       'zh': `/ct`,
     },
   },

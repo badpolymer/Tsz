@@ -142,13 +142,6 @@ h1 {
   padding: 1rem;
 }
 
-header {
-
-  display: flex;
-  gap: $header-font-size;
-  flex-direction: row-reverse;
-  padding: 0.25rem 0.5rem;
-  margin-right: 0;
-
-
+.visual_hidden{
+  visibility:hidden;
 }

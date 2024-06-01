@@ -1,0 +1,27 @@
+@import "@/styles/variables";
+.top {
+    height: 4rem;
+    display: flex;
+    gap: $header-font-size;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0;
+    font-size: $header-font-size;
+    color: var(--c0);
+    border-bottom: 1px solid rgba(126, 126, 126, 0.263);
+
+    .logo{
+        width: 2 * $header-font-size;
+        height:  2 * $header-font-size;
+        svg{
+            width: 2 * $header-font-size;
+            height:  2 * $header-font-size;
+            fill: var(--c0);
+        }
+    }
+
+    .spacer{
+        flex-grow: 1;
+    }
+
+}
